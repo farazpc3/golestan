@@ -1,0 +1,298 @@
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("fonts/Vazirmatn-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --header-bg-color: rgb(40, 40, 40);
+  --social-media-icon-color: rgb(179, 179, 179);
+  --highlighted-nav-link-color: rgb(255, 255, 255);
+  --nav-link-color: rgb(175, 178, 180);
+  --nav-link-border-color: rgb(175, 178, 180);
+  --header-height: 7rem;
+  --main-bg-color: rgb(233, 233, 233);
+  --button-normal-text-color: black;
+  --button-normal-bg-color: white;
+  --button-hover-text-color: white;
+  --button-hover-bg-color: red;
+  --text-highlight: red;
+  --border-default-color: rgb(74, 74, 74);
+  --hero-card-bg-color: red;
+}
+
+html {
+  font-family: "Vazirmatn", sans-serif;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  text-align: justify;
+  text-align-last: right;
+}
+
+body {
+  margin: 0;
+  box-sizing: content-box;
+  padding-top: var(--header-height);
+  background-color: var(--main-bg-color);
+  background-position: 0;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  background-blend-mode: color;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.main-and-footer-container {
+  position: relative;
+  position-anchor: --main-header;
+  position-area: bottom;
+  margin-top: var(--header-height);
+  margin-block-start: var(--header-height);
+}
+.site-wrapper {
+  box-sizing: content-box;
+  position: static;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header {
+  position: fixed;
+  display: block;
+  background-color: var(--header-bg-color);
+  background-image: url("../images/background/svg/noise.svg");
+  width: 100%;
+  height: var(--header-height);
+  padding: 1.5em 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  justify-content: center;
+  background-attachment: fixed;
+}
+
+.main-nav-list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  li a {
+    text-decoration: none;
+    color: var(--nav-link-color);
+    padding: 0.2em 1em;
+    border-left: solid 0.001em var(--nav-link-border-color);
+  }
+  li:first-child a {
+    color: var(--highlighted-nav-link-color);
+  }
+  li:last-child a {
+    border-left: none;
+  }
+}
+
+.dropbtn::after {
+  content: "▼";
+  font-size: 0.7em;
+  margin-right: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+.dropdown {
+  display: none;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropbtn::after,
+.dropdown.open .dropbtn::after {
+  transform: rotate(180deg);
+}
+
+main {
+  padding: 1em 7em;
+  background-color: transparent;
+  background-image: linear-gradient(190deg, #fbfbfb 0%, #d2d2d2 100%);
+  width: 100%;
+  section {
+    width: 100%;
+  }
+}
+
+.lottery {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.text-hero {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2em;
+}
+
+.sms {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-button {
+  border-radius: 0.2em;
+  border: solid 1px black;
+  color: var(--button-normal-text-color);
+  background-color: var(--button-normal-bg-color);
+  padding: 0.5em 1em;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.link-button:hover {
+  color: var(--button-hover-text-color);
+  background-color: var(--button-hover-bg-color);
+}
+
+.background-fixed {
+  background-image: url(../images/background/recipe-banner-1.png);
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-origin: border-box;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  height: 15em;
+  width: 100%;
+}
+
+.about-link-list {
+  display: flex;
+  list-style-type: none;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 5em;
+
+  li {
+    border-bottom: solid 1px rgb(74, 74, 74);
+    padding: 1.5em 2em;
+    text-wrap-mode: nowrap;
+  }
+}
+
+.golestan-rice-links {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.2em;
+}
+
+.golestan-rice-figure {
+  position: relative;
+  width: 100%;
+}
+
+.golestan-rice-image {
+  width: 100%;
+}
+
+.hero-card {
+  position: absolute;
+  bottom: 0;
+  right: 15%;
+  background-color: var(--hero-card-bg-color);
+  padding: 0.3em 1.5em 0.6em 5em;
+  h2 {
+    margin: 0;
+  }
+}
+
+.food-cards {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.title p {
+  color: var(--text-highlight);
+}
+
+.highlight {
+  color: var(--text-highlight);
+}
+
+.lottery h2 {
+  grid: 2 1;
+}
+
+.lottery h3 {
+  grid: 2 2;
+}
+
+.social-links-list {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-social a {
+  display: flex;
+  text-decoration: none;
+  color: var(--social-media-icon-color);
+  transition-property: color;
+  transition-timing-function: ease-out;
+  transition-duration: 0.2s;
+  border-radius: 50%;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  color: #ffffff;
+}
+
+.footer-social .icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
