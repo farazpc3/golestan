@@ -1,7 +1,15 @@
 @font-face {
   font-family: "Vazirmatn";
   src: url("fonts/Vazirmatn-Medium.woff2") format("woff2");
-  font-weight: 500;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(".././fonts/roboto/variable/roboto-latin-standard-normal.woff2");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -21,6 +29,10 @@
   --text-highlight: red;
   --border-default-color: rgb(74, 74, 74);
   --hero-card-bg-color: red;
+  --lottery-bg-color: transparent;
+  --lottery-bg-image: linear-gradient(190deg, #fbfbfb 0%, #d2d2d2 100%);
+  --h3-color: rgb(88, 89, 91);
+  --main-p-color: rgb(137, 137, 137);
 }
 
 html {
@@ -55,12 +67,33 @@ body {
   overflow-x: hidden;
 }
 
+h2 {
+  color: red;
+  font-weight: 300;
+}
+
+h3 {
+  color: var(--h3-color);
+}
+
+p {
+  font-weight: 100;
+  color: var(--main-p-color);
+}
+
+.main-p {
+  color: var(--main-p-color);
+  margin-bottom: 2em;
+}
+
 .main-and-footer-container {
   position: relative;
   position-anchor: --main-header;
   position-area: bottom;
   margin-top: var(--header-height);
   margin-block-start: var(--header-height);
+  width: 100%;
+  padding: 0;
 }
 .site-wrapper {
   box-sizing: content-box;
@@ -118,6 +151,44 @@ body {
   }
 }
 
+.golestan-definition {
+  border-top: solid 1px var(--border-default-color);
+  border-bottom: solid 1px var(--border-default-color);
+  padding: 2em 15em;
+  margin: 1em 0;
+}
+
+.golestan-products {
+  padding: 2em 15em;
+  margin: 1em 0;
+  border-bottom: solid 1px var(--border-default-color);
+}
+
+.about-golestan {
+  padding: 2em 25em;
+  margin: 5em 0 1 em 0;
+  li {
+    color: rgb(124, 125, 126);
+  }
+}
+
+.dropdwn-links {
+  display: none;
+  z-index: -1000;
+}
+
+.dropbtn-1:hover {
+  .dropdwn-links {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+  }
+  color: red;
+}
+.dropbtn {
+  position: relative;
+}
+
 .dropbtn::after {
   content: "▼";
   font-size: 0.7em;
@@ -136,7 +207,7 @@ body {
 }
 
 main {
-  padding: 1em 7em;
+  padding: 1em 0;
   background-color: transparent;
   background-image: linear-gradient(190deg, #fbfbfb 0%, #d2d2d2 100%);
   width: 100%;
@@ -150,6 +221,12 @@ main {
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
+  background-color: var(--lottery-bg-color);
+  background-image: var(--lottery-bg-image);
+  background-origin: border-box;
+  background-position: 0;
+  width: 100%;
+  padding: 0 3em 0 7em;
 }
 
 .text-hero {
@@ -198,13 +275,23 @@ main {
   list-style-type: none;
   flex-flow: row nowrap;
   justify-content: center;
-  gap: 5em;
+  gap: 1em;
 
   li {
     border-bottom: solid 1px rgb(74, 74, 74);
     padding: 1.5em 2em;
     text-wrap-mode: nowrap;
   }
+}
+
+.golestan-rice-hero {
+  padding: 2em 0;
+  border-bottom: solid 1px rgb(74, 74, 74);
+  border-top: solid 1px rgb(74, 74, 74);
+}
+
+.hero-card > * {
+  color: white;
 }
 
 .golestan-rice-links {
