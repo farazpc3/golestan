@@ -49,7 +49,7 @@ body {
   margin: 0;
   box-sizing: content-box;
   padding-top: var(--header-height);
-  background-color: var(--main-bg-color);
+  background-color: white;
   background-position: 0;
   background-origin: border-box;
   background-repeat: no-repeat;
@@ -87,6 +87,7 @@ p {
 }
 
 .main-and-footer-container {
+  background-color: white;
   position: relative;
   position-anchor: --main-header;
   position-area: bottom;
@@ -159,9 +160,24 @@ p {
 }
 
 .golestan-products {
+  padding: 8em 15em 2em;
+  background-color: white;
+  margin: 1em 0;
+  border-bottom: solid 1px var(--border-default-color);
+}
+
+.default-section {
   padding: 2em 15em;
   margin: 1em 0;
   border-bottom: solid 1px var(--border-default-color);
+}
+
+.card {
+  background-color: white;
+  img {
+    width: 100%;
+    aspect-ratio: 1.5;
+  }
 }
 
 .about-golestan {
@@ -209,7 +225,6 @@ p {
 main {
   padding: 1em 0;
   background-color: transparent;
-  background-image: linear-gradient(190deg, #fbfbfb 0%, #d2d2d2 100%);
   width: 100%;
   section {
     width: 100%;
@@ -249,6 +264,9 @@ main {
   background-color: var(--button-normal-bg-color);
   padding: 0.5em 1em;
   text-decoration: none;
+  display: block;
+  width: fit-content;
+  margin: 0.5em 0;
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
@@ -323,11 +341,19 @@ main {
   }
 }
 
+.food-recipe,
+.vids {
+  padding: 2em 4em;
+}
+.food-recipe {
+  background-color: #cde4b0;
+}
 .food-cards {
-  display: flex;
-  flex-flow: row nowrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   gap: 1em;
 }
 
@@ -336,7 +362,16 @@ main {
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+  height: 100%;
   gap: 1em;
+  h2,
+  p {
+    margin: 0 1em;
+  }
+  a:last-child {
+    justify-self: flex-end;
+    margin: 0 1em 1em;
+  }
 }
 
 .title p {
@@ -353,6 +388,19 @@ main {
 
 .lottery h3 {
   grid: 2 2;
+}
+
+.social-links {
+  border-bottom: solid 1.5em red;
+  margin-top: 3em;
+  padding-bottom: 3em;
+  background-color: colorrgb(238, 239, 239);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
 }
 
 .social-links-list {
@@ -373,6 +421,10 @@ main {
   border-radius: 50%;
 }
 
+.extra-link:hover {
+  color: rgb(255, 255, 255);
+}
+
 .footer-social a:hover,
 .footer-social a:focus-visible {
   color: #ffffff;
@@ -385,10 +437,40 @@ main {
 }
 
 .extra-links {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(4, 1fr));
+  grid-gap: 0;
+  justify-items: center;
+  padding-bottom: 3em;
+}
+
+.copyright-1 {
+  padding-top: 5em;
+}
+.copyright-2 {
+  margin-top: 0;
+  font-size: 0.7em;
+  color: #7b7b7b;
+}
+
+.extra-links-section {
+  background-color: rgb(40, 40, 40);
+  background-image: url("../images/background/svg/noise.svg");
+  margin-top: 0;
+  padding-top: 3em;
+  h2 {
+    color: white;
+    border-bottom: solid 1px rgb(174, 174, 174);
+    border-top: solid 1px rgb(174, 174, 174);
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+    text-align: center;
+    text-align-last: center;
+    align-self: center;
+    align-content: center;
+    display: block;
+    width: 100%;
+  }
 }
 
 .extra-links-container {
@@ -396,4 +478,76 @@ main {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: flex-start;
+  align-content: flex-start;
+  gap: 2em;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.extra-links-container li {
+  list-style-type: none;
+  margin: 0.2em 0;
+  a {
+    font-size: 0.8em;
+  }
+}
+.extra-links-container a {
+  text-decoration: none;
+  color: rgb(209, 211, 212);
+}
+
+.extra-link-card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.title {
+  padding: 1em 2em 2em;
+  background-color: white;
+  p {
+    font-weight: 700;
+  }
+}
+.mahdi-hospital {
+  background-color: rgb(16, 81, 83);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1em solid rgb(233, 214, 159);
+
+  padding: 10em 5em;
+  figcaption {
+    anchor-name: --hospital;
+    position: relative;
+  }
+}
+.mahdi-hospital-image {
+  position: absolute;
+  position-anchor: --hospital;
+  top: anchor(bottom);
+  justify-self: anchor-center;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
